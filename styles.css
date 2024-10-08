@@ -110,6 +110,9 @@ p .about{
     font-family: Work sans,sans-serif, Helvetica;
 }
 
+p .word{
+font-weight: 30px;
+}
 .buttons {
     display: flex;
     gap: 1rem;
