@@ -106,6 +106,10 @@ display: block;
     margin-bottom: 2rem;
 }
 
+p .about{
+    font-family: Georgia, serif;
+}
+
 .buttons {
     display: flex;
     gap: 1rem;
