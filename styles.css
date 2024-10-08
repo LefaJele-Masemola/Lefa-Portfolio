@@ -59,3 +59,26 @@ display: block;
     margin-right: 0;
 }
 }
+
+.proficiency-heatmap{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+grid-template-rows: 1fr;
+}
+
+.cell{
+    padding: 10px;
+    text-align: center;
+}
+
+.high-prof{
+    background-color: green;
+}
+
+.med-prof{
+    background-color: yellow;
+}
+
+.low-prof{
+    background-color: red;
+}
