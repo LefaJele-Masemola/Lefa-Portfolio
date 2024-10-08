@@ -1,0 +1,375 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif; /* Base font */
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+/* Landing Section Styling */
+.landing {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* White background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Above other content */
+    animation: fadeOut 10s forwards; /* Fade out after 10 seconds */
+}
+
+.hello-text {
+    position: relative;
+    font-size: 3em;
+    font-weight: bold;
+    height: 1.2em; /* Prevents layout shift */
+}
+
+.hello {
+    position: absolute;
+    opacity: 0;
+    animation: showHello 10s infinite;
+}
+
+/* Keyframes for showing each "Hello" */
+@keyframes showHello {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    15% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Stagger the animation for each "Hello" */
+.hello:nth-child(1) { animation-delay: 0s; }
+.hello:nth-child(2) { animation-delay: 1s; }
+.hello:nth-child(3) { animation-delay: 2s; }
+.hello:nth-child(4) { animation-delay: 3s; }
+.hello:nth-child(5) { animation-delay: 4s; }
+.hello:nth-child(6) { animation-delay: 5s; }
+.hello:nth-child(7) { animation-delay: 6s; }
+.hello:nth-child(8) { animation-delay: 7s; }
+.hello:nth-child(9) { animation-delay: 8s; }
+.hello:nth-child(10) { animation-delay: 9s; }
+
+/* Fade out Landing Section */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Dark background */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1; /* Below landing section */
+}
+
+/* Hide the checkbox */
+.nav-toggle {
+    display: none;
+}
+
+/* Styling the hamburger icon */
+.nav-toggle-label {
+    display: none; /* Hidden on larger screens */
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background-color: #fff; /* White bars */
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    position: absolute;
+}
+
+.nav-toggle-label span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-toggle-label span::before {
+    content: '';
+    top: -10px;
+}
+
+.nav-toggle-label span::after {
+    content: '';
+    top: 10px;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: auto; /* Push links to the right */
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff; /* White text */
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff6347; /* Tomato color on hover */
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 768px) {
+    /* Show hamburger icon */
+    .nav-toggle-label {
+        display: block;
+    }
+
+    /* Hide navigation links by default */
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 60px; /* Below navbar */
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    /* Show navigation links when checkbox is checked */
+    .nav-toggle:checked ~ .nav-links {
+        left: 0;
+    }
+}
+
+/* Main Content Styling */
+.main-content {
+    padding-top: 60px; /* Prevents content from being hidden behind the fixed navbar */
+}
+
+/* Main Header Styling */
+.main-header {
+    text-align: center;
+    margin: 50px 20px;
+}
+
+.name {
+    font-family: 'Montserrat', sans-serif; /* Updated to Montserrat */
+    font-size: 4em; /* Large size */
+    color: #333;
+    animation: fadeInName 2s ease-in-out forwards;
+    opacity: 0; /* Initially hidden */
+}
+
+@keyframes fadeInName {
+    to { opacity: 1; }
+}
+
+/* About Me Section Styling */
+.about-me {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    padding: 50px 20px;
+    text-align: center;
+    animation: fadeInAbout 10s forwards;
+    animation-delay: 10s; /* Starts after landing animation */
+}
+
+@keyframes fadeInAbout {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Enhanced Profile Picture Styling */
+.profile-pic img {
+    width: 300px; /* Increased size for better visibility */
+    height: 300px; /* Increased size for better visibility */
+    object-fit: cover;
+    border-radius: 50%; /* Makes image circular */
+    border: 5px solid #333; /* Dark border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* About Description Styling */
+.about-description {
+    max-width: 600px;
+    text-align: left;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Skills Section Styling */
+.skills {
+    margin-top: 50px;
+}
+
+.skills h3 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align bars to the bottom */
+    gap: 20px;
+    height: 200px; /* Adjust based on desired bar height */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-name {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Skill Bar Container */
+.skill-bar {
+    width: 40px;
+    height: 150px; /* Set a fixed height for visibility */
+    background-color: #ddd;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Skill Level Indicator */
+.skill-level {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0; /* Will be set based on proficiency */
+    background-color: #4caf50; /* Default color, overridden by specific skills */
+    transition: height 1s ease-in-out;
+}
+
+/* Individual Skill Levels */
+.java { height: 80%; background-color: #f44336; }         /* Java - 80% */
+.javascript { height: 90%; background-color: #ff9800; }   /* JavaScript - 90% */
+.html { height: 95%; background-color: #2196f3; }         /* HTML - 95% */
+.css { height: 90%; background-color: #3f51b5; }          /* CSS - 90% */
+.python { height: 85%; background-color: #009688; }       /* Python - 85% */
+.react { height: 80%; background-color: #00bcd4; }        /* React - 80% */
+
+/* Projects Section Styling */
+.projects {
+    padding: 50px 20px;
+    background-color: #e0e0e0; /* Light gray background */
+    text-align: center;
+}
+
+.projects h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.projects p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Contact Section Styling */
+.contact {
+    padding: 50px 20px;
+    background-color: #d0d0d0; /* Slightly darker gray */
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact a {
+    color: #ff6347; /* Tomato color for links */
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media Links Styling */
+.social-media {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row; /* Changed to row for horizontal layout */
+    gap: 15px;
+    z-index: 3;
+}
+
+.social-media a {
+    color: #333; /* Dark color for icons */
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #ff6347; /* Tomato color on hover */
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    margin-top: 50px;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
