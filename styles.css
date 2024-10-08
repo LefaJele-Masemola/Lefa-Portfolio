@@ -9,7 +9,7 @@ header{
     color: #fff;
     padding: 10px;
 }
-
+/*NAVIGATION BAR*/
 nav{
     display: flex;
     justify-content: space-between;
@@ -59,26 +59,49 @@ display: block;
     margin-right: 0;
 }
 }
-
-.proficiency-heatmap{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-grid-template-rows: 1fr;
+/*SKILLS PROFICIENCY*/
+.bar-graph{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.cell{
-    padding: 10px;
-    text-align: center;
+.bar-graph{
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
-.high-prof{
-    background-color: green;
+.bar{
+    width: 30px;
+    background-color: #007bff;
+    margin: 5px;
+    position: relative;
+    transition: height 0.5s ease-in-out;
 }
 
-.med-prof{
-    background-color: yellow;
+.bar label{
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    font-size: 12px;
+    color: #666;
 }
 
-.low-prof{
-    background-color: red;
+.bar:nth-child(1){
+    animation: grow 0.5s ease-in-out forwards;
+}
+
+.bar:nth-child(2){
+    animation: grow 0.5s ease-in-out forwards 0.2s;
+}
+/*add animation for other bars with appropriate delays..*/
+
+@keyframes grow{
+    from{
+        height: 0;
+    }
+    to {
+        height: var(--bar-height);
+    }
 }
