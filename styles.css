@@ -110,7 +110,7 @@ p .about{
     font-family: Work sans,sans-serif, Helvetica;
 }
 
-p .word{
+.about .word{
 font-weight: 30px;
 }
 .buttons {
