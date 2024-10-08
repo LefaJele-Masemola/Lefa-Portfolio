@@ -16,12 +16,12 @@ nav{
     align-items: center;
 }
 
-.nev-bar{
+.nav-bar{
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-.nev-bar li{
+.nav-bar li{
     display: inline-block;
     margin-right: 20px;
     
