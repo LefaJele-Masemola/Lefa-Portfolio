@@ -158,27 +158,23 @@ font-weight: 30px;
 } 
 
 /*SKILLS PROFICIENCY*/
-.bar-graph{
+.bar-graph {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: center; /* Center the bars */
+    height: 300px; /* Set a fixed height for the graph */
 }
 
-.bar-graph{
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.bar{
+.bar {
     width: 30px;
     background-color: #007bff;
     margin: 5px;
     position: relative;
     transition: height 0.5s ease-in-out;
+    animation: grow 0.5s ease-in-out forwards; /* Base animation */
 }
 
-.bar label{
+.bar label {
     position: absolute;
     bottom: -15px;
     left: 0;
@@ -186,21 +182,21 @@ align-items: center;
     color: #666;
 }
 
-.bar:nth-child(1){
-    animation: grow 0.5s ease-in-out forwards;
-}
+/* Delay for each bar */
+.bar:nth-child(1) { animation-delay: 0s; }
+.bar:nth-child(2) { animation-delay: 0.2s; }
+.bar:nth-child(3) { animation-delay: 0.4s; }
+.bar:nth-child(4) { animation-delay: 0.6s; }
+.bar:nth-child(5) { animation-delay: 0.8s; }
+.bar:nth-child(6) { animation-delay: 1s; }
+.bar:nth-child(7) { animation-delay: 1.2s; }
 
-.bar:nth-child(2){
-    animation: grow 0.5s ease-in-out forwards 0.2s;
-}
-/*add animation for other bars with appropriate delays..*/
-
-@keyframes grow{
-    from{
+@keyframes grow {
+    from {
         height: 0;
     }
     to {
-        height: var(--bar-height);
+        height: var(--bar-height); /* Use the custom property for height */
     }
 }
 
