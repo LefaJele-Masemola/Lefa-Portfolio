@@ -105,3 +105,46 @@ align-items: center;
         height: var(--bar-height);
     }
 }
+
+/* Portfolio */
+.portfolio {
+    position: relative;
+    padding: 100px 0;
+    background-color: aliceblue;
+}
+
+.portfolio .title {
+    text-align: center;
+    font-weight: 600;
+}
+
+.portfoliogrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.portfolio_card {
+    display: grid;
+    text-align: center;
+    background-color: rgb(243, 243, 243);
+    border-radius: 10px;
+    box-shadow: 0 5px var(--box-shadow-dark);
+    padding: 2px;
+    border: 1px solid #000;
+}
+
+.portfolio_card a {
+    color: var(--primary-color);
+}
+
+.portfolio_card img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.project_title {
+    text-align: center;
+    margin-bottom: 1em;
+}
