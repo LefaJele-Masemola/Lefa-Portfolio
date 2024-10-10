@@ -295,7 +295,7 @@ body {
 .css { height: 90%; background-color: #3f51b5; }          /* CSS - 90% */
 .python { height: 85%; background-color: #009688; }       /* Python - 85% */
 .react { height: 80%; background-color: #00bcd4; }        /* React - 80% */
-.flask{ height: 10%; background-color: #e0e0e0;}           /* Flask - 10% */
+.flask{ height: 10%; background-color: #f30d0d;}           /* Flask - 10% */
 
 /* Projects Section Styling */
 .projects {
