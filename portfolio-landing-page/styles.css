@@ -72,7 +72,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color:#E7CCCC; /* Dark background */
+    background-color:#E7CCCC; /* light background */
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -376,7 +376,7 @@ details[open] {
     display: inline-flex;
     align-items: center;
     padding: 10px 20px;
-    background-color: #4772ff; /* Tomato color */
+    background-color: #4772ff; /* blue-purple color */
     color: #fff;
     text-decoration: none;
     font-size: 1em;
