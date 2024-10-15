@@ -72,7 +72,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #333; /* Dark background */
+    background-color:#E7CCCC; /* Dark background */
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -420,7 +420,7 @@ details[open] {
 }
 
 .social-media a {
-    color: #333; /* Dark color for icons */
+    color: #E7CCCC; /* Dark color for icons */
     font-size: 1.5em;
     transition: color 0.3s;
 }
