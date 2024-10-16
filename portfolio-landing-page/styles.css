@@ -289,12 +289,12 @@ body {
 }
 
 /* Individual Skill Levels */
-.java { height: 80%; background-color: #f44336; }         /* Java - 80% */
-.javascript { height: 90%; background-color: #ff9800; }   /* JavaScript - 90% */
-.html { height: 95%; background-color: #2196f3; }         /* HTML - 95% */
-.css { height: 90%; background-color: #3f51b5; }          /* CSS - 90% */
-.python { height: 85%; background-color: #009688; }       /* Python - 85% */
-.react { height: 40%; background-color: #00bcd4; }        /* React - 40% */
+.java { height: 50%; background-color: #f44336; }         /* Java - 50% */
+.javascript { height: 50%; background-color: #ff9800; }   /* JavaScript - 50% */
+.html { height: 85%; background-color: #2196f3; }         /* HTML - 85% */
+.css { height: 70%; background-color: #3f51b5; }          /* CSS - 70% */
+.python { height: 45%; background-color: #009688; }       /* Python - 45% */
+.react { height: 30%; background-color: #00bcd4; }        /* React - 30% */
 .flask{ height: 10%; background-color: #f30d0d;}           /* Flask - 10% */
 
 /* Projects Section Styling */
