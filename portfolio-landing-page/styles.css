@@ -376,7 +376,7 @@ details[open] {
     display: inline-flex;
     align-items: center;
     padding: 10px 20px;
-    background-color: #000000; /* blue-purple colour */
+    background-color: #000000; /* black colour */
     color: #fff;
     text-decoration: none;
     font-size: 1em;
@@ -386,7 +386,7 @@ details[open] {
 }
 
 .btn:hover {
-    background-color: rgb(173, 143, 143); /* blue-ish colour on hover */
+    background-color: rgb(173, 143, 143); 
     transform: translateY(-2px); /* Slight lift on hover */
 }
 
