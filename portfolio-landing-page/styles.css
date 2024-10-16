@@ -376,7 +376,7 @@ details[open] {
     display: inline-flex;
     align-items: center;
     padding: 10px 20px;
-    background-color: #4772ff; /* blue-purple color */
+    background-color: #000000; /* blue-purple colour */
     color: #fff;
     text-decoration: none;
     font-size: 1em;
@@ -386,7 +386,7 @@ details[open] {
 }
 
 .btn:hover {
-    background-color: #e5533d; /* Darker tomato on hover */
+    background-color: rgb(173, 143, 143); /* blue-ish colour on hover */
     transform: translateY(-2px); /* Slight lift on hover */
 }
 
@@ -420,7 +420,7 @@ details[open] {
 }
 
 .social-media a {
-    color: #E7CCCC; /* Dark color for icons */
+    color: #976d6d; /* Dark color for icons */
     font-size: 1.5em;
     transition: color 0.3s;
 }
