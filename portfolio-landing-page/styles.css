@@ -305,6 +305,17 @@ body {
     text-align: center;
 }
 
+/* Responsive Projects */
+@media (max-width: 768px) {
+    .projects {
+        padding: 30px 15px; /* Adjust padding for small screens */
+    }
+
+    .accordion {
+        max-width: 100%; /* Take full width on smaller screens */
+    }
+}
+
 .projects h2 {
     margin-bottom: 20px;
     color: #333;
@@ -323,6 +334,7 @@ body {
     width: 100%;
     max-width: 800px;
     margin: 0 auto; /* Center the accordion */
+    
 }
 
 /* Details Element Styling */
@@ -432,11 +444,19 @@ details[open] {
 
 /* Footer Styling */
 .footer {
-    text-align: left;
-    padding: 20px;
+    text-align: center; /* Center text on small screens */
+    padding: 10px; /* Reduced padding for small screens */
     background-color: #333; /* Dark background */
     color: #f1ebeb; /* White text */
     margin-top: 50px;
+}
+
+/* Responsive Footer */
+@media (max-width: 480px) {
+    .footer {
+        padding: 10px 15px; /* Adjust padding for small screens */
+        text-align: center; /* Ensure footer content is centered */
+    }
 }
 
 /* Smooth Scrolling */
