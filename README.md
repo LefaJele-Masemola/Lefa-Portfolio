@@ -70,11 +70,7 @@ npm start
 **Usage**
 
 Once the project is running, you can navigate to http://localhost:3000 (or the appropriate port) to view the website.
-<br>
-**License**
 
-This project is licensed under the MIT License. 
-See the LICENSE file for details.
 <br>
 **Contact**
 
