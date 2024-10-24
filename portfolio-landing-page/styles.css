@@ -203,6 +203,9 @@ body {
     animation-delay: 10s; /* Starts after landing animation */
 }
 
+.about-me h2{
+    font-size:2em; /* Increased font size for better visibility */
+}
 @keyframes fadeInAbout {
     from { opacity: 0; }
     to { opacity: 1; }
