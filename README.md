@@ -1,6 +1,7 @@
 **<h1>Portfolio Website</h1>**
 
-Welcome to my portfolio website 👊🏼! This project showcases my skills, projects, and experiences as a software developer and designer.
+Welcome to my portfolio website 👊🏼! 
+This project showcases my skills, projects, and experiences as a software developer and designer.
 <br>
 
 **Table of Contents:**
