@@ -14,7 +14,7 @@ body {
 .grey-ball {
     width: 20px;
     height: 20px;
-    background-color: grey;
+    background-color: rgb(186, 48, 221);
     border-radius: 50%;
     position: absolute;
     pointer-events: none; /* Prevent the ball from blocking clicks */
