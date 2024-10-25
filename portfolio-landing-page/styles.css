@@ -9,7 +9,17 @@
 body {
     font-family: 'Roboto', sans-serif; /* Base font */
     background-color: #f0f0f0; /* Light gray background */
+    cursor: none; 
 }
+.grey-ball {
+    width: 20px;
+    height: 20px;
+    background-color: grey;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none; /* Prevent the ball from blocking clicks */
+    transform: translate(-50%, -50%); /* Center the ball at the cursor */
+  }
 
 /* Landing Section Styling */
 .landing {
