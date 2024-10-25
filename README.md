@@ -1,4 +1,4 @@
-<h1>**Portfolio Website**</h1>
+**<h1>Portfolio Website</h1>**
 
 Welcome to my portfolio website! This project showcases my skills, projects, and experiences as a software developer and designer.
 <br>
@@ -72,6 +72,7 @@ npm start
 Once the project is running, you can navigate to http://localhost:3000 (or the appropriate port) to view the website.
 
 <br>
+
 **Contact**
 
 Feel free to reach out to me via email at [lefa030205@gmail.com] or connect with me on LinkedIn.
