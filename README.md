@@ -1,6 +1,7 @@
 **<h1>Portfolio Website</h1>**
 
 Welcome to my portfolio website 👊🏼! 
+
 This project showcases my skills, projects, and experiences as a software developer and designer.
 <br>
 
@@ -17,6 +18,7 @@ Contact
 About
 <br>
 This portfolio website is a place where I display my work, share information about myself, and highlight some of my best projects. 
+
 The landing page starts with a simple "Hello!" and leads to sections about my skills, projects, and background.
 
 **Features**
