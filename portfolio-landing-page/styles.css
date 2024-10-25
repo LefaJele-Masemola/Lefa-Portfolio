@@ -14,9 +14,10 @@ body {
 .grey-ball {
     width: 20px;
     height: 20px;
-    background-color: rgb(186, 48, 221);
+    background-color: rgb(128, 128, 128, 0.7);
     border-radius: 50%;
     position: absolute;
+    z-index: 5;
     pointer-events: none; /* Prevent the ball from blocking clicks */
     transform: translate(-50%, -50%); /* Center the ball at the cursor */
   }
@@ -209,7 +210,7 @@ body {
     transition: opacity 2s ease-in-out;
     padding: 50px 20px;
     text-align: center;
-    animation: fadeInAbout 10s forwards;
+    animation: fadeInAbout 2s forwards;
     animation-delay: 10s; /* Starts after landing animation */
 }
 
