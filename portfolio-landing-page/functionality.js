@@ -5,6 +5,9 @@ document.body.appendChild(greyBall);
 
 // Update the position of the grey ball based on mouse movement
 document.addEventListener('mousemove', (event) => {
-  greyBall.style.left = `${event.pageX}px`;
+  
+  // Ensure the grey ball does not exceed the viewport boundaries
+  const ballSize = greyBall.offsetWidth + 0.5;
+  greyBall.style.left = `${event.pageX - ballSize}px`;
   greyBall.style.top = `${event.pageY}px`;
 });
