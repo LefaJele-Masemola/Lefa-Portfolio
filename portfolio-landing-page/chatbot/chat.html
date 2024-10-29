@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-box" id="chat-box"></div>
-        <input type="text" id="user-input" placeholder="Type a message..." />
-        <button id="send-button">Send</button>
+    <!-- Button to Open Chatbot -->
+    <button onclick="toggleChatbot()" id="chatbot-toggle">Chat with Me!</button>
+
+    <!-- Chatbot Popup -->
+    <div id="chatbot-popup" class="hidden">
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <input type="text" id="chatbot-input" placeholder="Type a message..." onkeypress="sendMessage(event)" />
+        <button onclick="sendUserMessage()" id="send-btn">Send</button>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
