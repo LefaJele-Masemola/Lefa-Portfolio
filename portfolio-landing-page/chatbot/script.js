@@ -68,11 +68,11 @@ function generateCreativeBotReply(userMessage) {
     } else if (message.includes("portfolio") || message.includes("projects")) {
         return "I'm glad you're interested! Check out my favorite projects, <a href=\"index.html#projects\" target=\"_blank\">here</a>, and feel free to ask about any of them!";
     } else if (message.includes("skills") || message.includes("experience")) {
-        return "My skills? I'm a tech wizard 🧙‍♂️ with expertise in web dev, data analysis, and a sprinkle of AI magic! What would you like to know more about?";
+        return "My skills? I'm a tech wizard 🧙‍♂️ with expertise in web dev, data analysis, and a sprinkle of AI magic! If you want to know more, feel free to <a href=\"index.html#skills\" target=\"_blank\">explore</a>.";
     } else if (message.includes("hobbies") || message.includes("interests")) {
         return "Outside of coding, I love creating art, writing poetry, and exploring new ideas. 🎨✍️ What about you?";
     } else if (message.includes("contact") || message.includes("email")) {
-        return "You can reach me through the contact section on my website or drop a message here!";
+        return "You can reach me through the <a href=\"index.html#contact\" target=\"_blank\">contact section </a> on my website or drop a message here!";
     } else if (message.includes("joke")) {
         return "Why did the programmer quit their job? Because they didn't get arrays! 😆";
     } else if (message.includes("inspire me") || message.includes("motivate me")) {
