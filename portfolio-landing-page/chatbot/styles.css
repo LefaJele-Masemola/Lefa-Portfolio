@@ -2,19 +2,20 @@
 #chatbot-toggle {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px; 
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #f0cece;
     color: #ffffff;
     border: none;
     border-radius: 50px;
     cursor: pointer;
+    z-index: 1000; /* Ensures the toggle button is above other elements */
 }
 
 #chatbot-popup {
     position: fixed;
     bottom: 70px;
-    right: 20px;
+    left: 20px; /* Changed from right to left */
     width: 300px;
     max-height: 400px;
     border: 1px solid #ccc;
@@ -24,6 +25,7 @@
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
+    z-index: 1000; /* Ensures the popup is above other elements */
 }
 
 .chatbot-messages {
@@ -63,7 +65,7 @@
 #send-btn {
     padding: 10px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #4c90af;
     color: #ffffff;
     cursor: pointer;
     border-top: 1px solid #ddd;
