@@ -461,7 +461,7 @@ details[open] {
 /* Footer Styling */
 .footer {
     text-align: center; /* Center text on small screens */
-    padding: 10px; /* Reduced padding for small screens */
+    padding: 15px; 
     background-color: #333; /* Dark background */
     color: #f1ebeb; /* White text */
     margin-top: 50px;

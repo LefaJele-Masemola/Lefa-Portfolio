@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="/portfolio-landing-page/styles.css">
+    <link rel="stylesheet" href="portfolio-landing-page/chatbot/styles.css">
     
 
 </head>
@@ -207,11 +208,22 @@
         <!-- Add more social media links as needed -->
     </div>
 
+    <!-- Button to Open Chatbot -->
+    <button onclick="toggleChatbot()" id="chatbot-toggle">Chat with Me!</button>
+
+    <!-- Chatbot Popup -->
+    <div id="chatbot-popup" class="hidden">
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <input type="text" id="chatbot-input" placeholder="Type a message..." onkeypress="sendMessage(event)" />
+        <button onclick="sendUserMessage()" id="send-btn">Send</button>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         &copy; 2024 - Lefa Jele-Masemola. All rights reserved.
     </footer>
 
     <script src="/portfolio-landing-page/functionality.js"></script>
+    <script src="portfolio-landing-page/chatbot/script.js"></script>
 </body>
 </html>
