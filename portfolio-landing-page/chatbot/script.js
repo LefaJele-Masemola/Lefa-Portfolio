@@ -1,7 +1,19 @@
+// Show Chatbot Popup with Greeting on Page Load
+window.onload = function () {
+    toggleChatbot();  // Show the chatbot popup
+    appendGreetingMessage();  // Display a greeting message
+};
+
 // Toggle Chatbot Popup
 function toggleChatbot() {
     const chatbotPopup = document.getElementById("chatbot-popup");
     chatbotPopup.style.display = chatbotPopup.style.display === "none" || chatbotPopup.style.display === "" ? "block" : "none";
+}
+
+// Display Greeting Message
+function appendGreetingMessage() {
+    const greetingMessage = "Hello! 👋 my name is Lee.  I'm here to help. Feel free to ask me anything or say 'hi' to get started!";
+    appendMessage(greetingMessage, 'bot-message');  // Display the greeting message
 }
 
 // Send User Message on Enter Key Press
