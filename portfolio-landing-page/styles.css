@@ -316,31 +316,20 @@ body {
 /* Projects Section Styling */
 .projects {
     padding: 50px 20px;
-    background-color: #f8f9fa; /* Light background for contrast */
+    background-color: #f8f9fa;
     text-align: center;
-}
-
-/* Responsive Projects */
-@media (max-width: 768px) {
-    .projects {
-        padding: 30px 15px; /* Adjust padding for small screens */
-    }
-
-    .accordion {
-        max-width: 100%; /* Take full width on smaller screens */
-    }
 }
 
 .projects h2 {
     margin-bottom: 20px;
     color: #333;
-    font-size: 2.5em; /* Increase font size for the title */
+    font-size: 2.5em;
 }
 
 .projects p {
     color: #555;
     line-height: 1.6;
-    font-size: 1.1em; /* Slightly larger font for readability */
+    font-size: 1.1em;
 }
 
 /* Accordion Styles */
@@ -348,8 +337,7 @@ body {
     margin-top: 20px;
     width: 100%;
     max-width: 800px;
-    margin: 0 auto; /* Center the accordion */
-    
+    margin: 0 auto;
 }
 
 /* Details Element Styling */
@@ -358,21 +346,45 @@ details {
     border-radius: 8px;
     margin-bottom: 10px;
     padding: 15px;
-    cursor: pointer; /* Pointer on hover */
-    transition: background-color 0.3s ease; /* Smooth background transition */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
 }
 
+/* Summary Styling */
 summary {
     font-weight: bold;
 }
 
-details:hover {
-    background-color: #f0f0f0; /* Change background on hover */
+/* Hover Image Styling */
+summary:hover + img {
+    display: block;
 }
 
-details[open] {
-    background-color: #e6f7ff; /* Change background when open */
+/* Hide image by default */
+details img {
+    display: none;
+    max-width: 50%;
+    height: auto;
+    margin-top: 10px;
 }
+
+/* Show image on summary hover only if details is not open */
+details:not([open]) summary:hover + img {
+    display: block;
+}
+
+/* Show image and description when details is open */
+details[open] img {
+    display: block;
+}
+
+/* Change background when open */
+details[open] {
+    background-color: #e6f7ff;
+}
+
+
 
 /* Contact Section Styling */
 .contact {
@@ -461,7 +473,7 @@ details[open] {
 /* Footer Styling */
 .footer {
     text-align: center; /* Center text on small screens */
-    padding: 10px; /* Reduced padding for small screens */
+    padding: 15px; 
     background-color: #333; /* Dark background */
     color: #f1ebeb; /* White text */
     margin-top: 50px;

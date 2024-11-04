@@ -1,7 +1,19 @@
+// Show Chatbot Popup with Greeting on Page Load
+window.onload = function () {
+    toggleChatbot();  // Show the chatbot popup
+    appendGreetingMessage();  // Display a greeting message
+};
+
 // Toggle Chatbot Popup
 function toggleChatbot() {
     const chatbotPopup = document.getElementById("chatbot-popup");
     chatbotPopup.style.display = chatbotPopup.style.display === "none" || chatbotPopup.style.display === "" ? "block" : "none";
+}
+
+// Display Greeting Message
+function appendGreetingMessage() {
+    const greetingMessage = "Hello! 👋 my name is Lee.  I'm here to help. Feel free to ask me anything or say 'hi' to get started!";
+    appendMessage(greetingMessage, 'bot-message');  // Display the greeting message
 }
 
 // Send User Message on Enter Key Press
@@ -66,13 +78,13 @@ function generateCreativeBotReply(userMessage) {
     if (message.includes("hello") || message.includes("hi")) {
         return "Hey there! 👋 What's up?";
     } else if (message.includes("portfolio") || message.includes("projects")) {
-        return "I'm glad you're interested! Check out my favorite projects, <a href=\"index.html#projects\" target=\"_blank\">here</a>, and feel free to ask about any of them!";
+        return "I'm glad you're interested! Check out my favorite projects, <a href=\"index.html#projects\">here</a>, and feel free to ask about any of them!";
     } else if (message.includes("skills") || message.includes("experience")) {
-        return "My skills? I'm a tech wizard 🧙‍♂️ with expertise in web dev, data analysis, and a sprinkle of AI magic! If you want to know more, feel free to <a href=\"index.html#skills\" target=\"_blank\">explore</a>.";
+        return "My skills? I'm a tech wizard 🧙‍♂️ with expertise in web dev, data analysis, and a sprinkle of AI magic! If you want to know more, feel free to <a href=\"index.html#skills\">explore</a>.";
     } else if (message.includes("hobbies") || message.includes("interests")) {
         return "Outside of coding, I love creating art, writing poetry, and exploring new ideas. 🎨✍️ What about you?";
     } else if (message.includes("contact") || message.includes("email")) {
-        return "You can reach me through the <a href=\"index.html#contact\" target=\"_blank\">contact section </a> on my website or drop a message here!";
+        return "You can reach me through the <a href=\"index.html#contact\">contact section</a> on my website or drop a message here!";
     } else if (message.includes("joke")) {
         return "Why did the programmer quit their job? Because they didn't get arrays! 😆";
     } else if (message.includes("inspire me") || message.includes("motivate me")) {
@@ -83,3 +95,4 @@ function generateCreativeBotReply(userMessage) {
         return "I'm here to chat about anything from code to coffee ☕️. Ask away!";
     }
 }
+
