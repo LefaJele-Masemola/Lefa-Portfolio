@@ -1,43 +1,43 @@
 //  Profile Data matching portfolio
 const portfolioProfile = {
-    name: "Lefa Lindo Jele-Masemola",
-    title: "Full Stack Developer",
-    location: "Pretoria, South Africa",
-    sections: {
-        about: "#about",
-        experience: "#experience",
-        projects: "#projects",
-        contact: "#contact"
-    },
-    skills: {
-        frontend: ["React", "ReactVite", "HTML/CSS", "JavaScript"],
-        backend: ["Node.js", "Python", "SQL", "Express", "MongoDB", "COBOL"],
-        devops: ["Docker", "Flask", "CI/CD", "Linux"],
-        design: ["UI/UX", "Figma"]
-    },
-    education: [
-        "Bachelor of Information Technology in Business Systems - IIE Rosebank College",
-        "GirlCode ZA Python Bootcamp",
-        "Microsoft AI Skills "
-    ],
-    experience: [
-        "Independent Electoral Commission(IEC)- Registration Officer (2023)",
-        "Independent Electoral Commission(IEC)- Presiding Officer(2024)",
-        "CapaCiti- COBOL mainframe intern (2024-Present)",
-        "Microsoft AI Skills Hackathon- CulturePulse (2025)"
-    ],
-    projects: [
-        "E-commerce Platform - HTML/CSS/JS",
-        "Budget Management System - Python",
-        "Facebook Clone - React"
-        "Portfolio - HTML/CSS/JS"
-    ],
-    contact: {
-        email: "lefa030205@gmail.com",
-        phone: "+27 71 528 3651",
-        linkedin: "linkedin.com/in/lefa-jele-masemola",
-        github: "github.com/LefaJele-Masemola"
-    }
+  name: "Lefa Lindo Jele-Masemola",
+  title: "Full Stack Developer",
+  location: "Pretoria, South Africia",
+  sections: {
+    about: "#about",
+    experience: "#experience",
+    projects: "#projects",
+    contact: "#contact"
+  },
+  skills: {
+    frontend: ["React", "ReactVite", "HTML/CSS", "JavaScript"],
+    backend: ["Node.js", "Python", "SQL", "Express", "MongoDB", "COBOL"],
+    devops: ["Docker", "Flask", "CI/CD", "Linux"],
+    design: ["UI/UX", "Figma"]
+  },
+  education: [
+    "Bachelor of Information Technology in Business Systems - IIE Rosebank College",
+    "GirlCode ZA Python Bootcamp",
+    "Microsoft AI Skills "
+  ],
+  experience: [
+    "Independent Electoral Commission(IEC)- Registration Officer (2023)",
+    "Independent Electoral Commission(IEC)- Presiding Officer(2024)",
+    "CapaCiti- COBOL mainframe intern (2024-Present)",
+    "Microsoft AI Skills Hackathon- CulturePulse (2025)"
+  ],
+  projects: [
+    "E-commerce Platform - HTML/CSS/JS",
+    "Budget Management System - Python",
+    "Facebook Clone - React",
+    "Portfolio - HTML/CSS/JS"
+  ],
+  contact: {
+    email: "lefa030205@gmail.com",
+    phone: "+27 71 528 3651",
+    linkedin: "linkedin.com/in/lefa-jele-masemola",
+    github: "github.com/LefaJele-Masemola"
+  }
 };
 
 // Chatbot UI Elements
@@ -229,101 +229,100 @@ const chatbotCSS = `
 `;
 
 // Initialize Chatbot
-document.addEventListener('DOMContentLoaded', function() {
-    // Add HTML and CSS to the page
-    document.body.insertAdjacentHTML('beforeend', chatbotHTML);
-    const style = document.createElement('style');
-    style.textContent = chatbotCSS;
-    document.head.appendChild(style);
-    
-    // Chatbot functionality
-    const chatbotContainer = document.getElementById('chatbot-container');
-    const chatbotToggle = document.getElementById('chatbot-toggle');
-    const chatbotClose = document.getElementById('chatbot-close');
-    const chatMessages = document.getElementById('chatbot-messages');
-    const userInput = document.getElementById('chatbot-user-input');
-    const sendBtn = document.getElementById('chatbot-send');
-    const micBtn = document.getElementById('chatbot-mic');
-    
-    // Show welcome message after 3 seconds
+document.addEventListener('DOMContentLoaded', function () {
+  // Add HTML and CSS to the page
+  document.body.insertAdjacentHTML('beforeend', chatbotHTML);
+  const style = document.createElement('style');
+  style.textContent = chatbotCSS;
+  document.head.appendChild(style);
+
+  // Chatbot functionality
+  const chatbotContainer = document.getElementById('chatbot-container');
+  const chatbotToggle = document.getElementById('chatbot-toggle');
+  const chatbotClose = document.getElementById('chatbot-close');
+  const chatMessages = document.getElementById('chatbot-messages');
+  const userInput = document.getElementById('chatbot-user-input');
+  const sendBtn = document.getElementById('chatbot-send');
+  // const micBtn = document.getElementById('chatbot-mic'); // Removed unused variable
+  // Show welcome message after 3 seconds
+  setTimeout(() => {
+    addBotMessage(`Hello! I'm here to tell you about ${portfolioProfile.name}'s professional background. Ask about skills, experience, or projects!`);
+  }, 3000);
+
+  // Toggle chatbot visibility
+  chatbotToggle.addEventListener('click', () => {
+    chatbotContainer.classList.toggle('chatbot-visible');
+    document.querySelector('.chatbot-pulse').style.display = 'none';
+  });
+
+  chatbotClose.addEventListener('click', () => {
+    chatbotContainer.classList.remove('chatbot-visible');
+    document.querySelector('.chatbot-pulse').style.display = 'block';
+  });
+
+  // Message handling
+  function addUserMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.className = 'chatbot-message chatbot-user-message';
+    messageElement.textContent = message;
+    chatMessages.appendChild(messageElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function addBotMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.className = 'chatbot-message chatbot-bot-message';
+    messageElement.innerHTML = message;
+    chatMessages.appendChild(messageElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function processMessage() {
+    const message = userInput.value.trim();
+    if (!message) return;
+
+    addUserMessage(message);
+    userInput.value = '';
+
     setTimeout(() => {
-        addBotMessage(`Hello! I'm here to tell you about ${portfolioProfile.name}'s professional background. Ask about skills, experience, or projects!`);
-    }, 3000);
-    
-    // Toggle chatbot visibility
-    chatbotToggle.addEventListener('click', () => {
-        chatbotContainer.classList.toggle('chatbot-visible');
-        document.querySelector('.chatbot-pulse').style.display = 'none';
-    });
-    
-    chatbotClose.addEventListener('click', () => {
-        chatbotContainer.classList.remove('chatbot-visible');
-        document.querySelector('.chatbot-pulse').style.display = 'block';
-    });
-    
-    // Message handling
-    function addUserMessage(message) {
-        const messageElement = document.createElement('div');
-        messageElement.className = 'chatbot-message chatbot-user-message';
-        messageElement.textContent = message;
-        chatMessages.appendChild(messageElement);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+      generateResponse(message.toLowerCase());
+    }, 500);
+  }
+
+  function generateResponse(message) {
+    // Simple response logic - expand as needed
+    if (message.includes('about') || message.includes('who are you')) {
+      addBotMessage(`I can tell you about ${portfolioProfile.name}, a ${portfolioProfile.title}. <a href="${portfolioProfile.sections.about}" class="chatbot-link">Visit About Section</a>`);
     }
-    
-    function addBotMessage(message) {
-        const messageElement = document.createElement('div');
-        messageElement.className = 'chatbot-message chatbot-bot-message';
-        messageElement.innerHTML = message;
-        chatMessages.appendChild(messageElement);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+    else if (message.includes('skill') || message.includes('tech')) {
+      addBotMessage(`<strong>Skills:</strong><br>Frontend: ${portfolioProfile.skills.frontend.join(', ')}<br>Backend: ${portfolioProfile.skills.backend.join(', ')}`);
     }
-    
-    function processMessage() {
-        const message = userInput.value.trim();
-        if (!message) return;
-        
-        addUserMessage(message);
-        userInput.value = '';
-        
-        setTimeout(() => {
-            generateResponse(message.toLowerCase());
-        }, 500);
+    else if (message.includes('experience') || message.includes('work')) {
+      addBotMessage(`<strong>Experience:</strong><br>${portfolioProfile.experience.join('<br>')}`);
     }
-    
-    function generateResponse(message) {
-        // Simple response logic - expand as needed
-        if (message.includes('about') || message.includes('who are you')) {
-            addBotMessage(`I can tell you about ${portfolioProfile.name}, a ${portfolioProfile.title}. <a href="${portfolioProfile.sections.about}" class="chatbot-link">Visit About Section</a>`);
-        } 
-        else if (message.includes('skill') || message.includes('tech')) {
-            addBotMessage(`<strong>Skills:</strong><br>Frontend: ${portfolioProfile.skills.frontend.join(', ')}<br>Backend: ${portfolioProfile.skills.backend.join(', ')}`);
-        }
-        else if (message.includes('experience') || message.includes('work')) {
-            addBotMessage(`<strong>Experience:</strong><br>${portfolioProfile.experience.join('<br>')}`);
-        }
-        else if (message.includes('project')) {
-            addBotMessage(`<strong>Projects:</strong><br>${portfolioProfile.projects.join('<br>')}`);
-        }
-        else if (message.includes('contact') || message.includes('reach')) {
-            addBotMessage(`<strong>Contact:</strong><br>Email: ${portfolioProfile.contact.email}<br>LinkedIn: <a href="https://${portfolioProfile.contact.linkedin}" class="chatbot-link" target="_blank">${portfolioProfile.contact.linkedin}</a>`);
-        }
-        else {
-            addBotMessage(`I can tell you about ${portfolioProfile.name}'s professional background. Try asking about:<br>- Skills<br>- Experience<br>- Projects<br>- Contact info`);
-        }
+    else if (message.includes('project')) {
+      addBotMessage(`<strong>Projects:</strong><br>${portfolioProfile.projects.join('<br>')}`);
     }
-    
-    // Event listeners
-    sendBtn.addEventListener('click', processMessage);
-    userInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') processMessage();
-    });
-    
-    // Mobile responsive check
-    function checkMobile() {
-        if (window.innerWidth <= 768) {
-            document.querySelector('.chatbot-pulse').style.display = 'none';
-        }
+    else if (message.includes('contact') || message.includes('reach')) {
+      addBotMessage(`<strong>Contact:</strong><br>Email: ${portfolioProfile.contact.email}<br>LinkedIn: <a href="https://${portfolioProfile.contact.linkedin}" class="chatbot-link" target="_blank">${portfolioProfile.contact.linkedin}</a>`);
     }
-    window.addEventListener('resize', checkMobile);
-    checkMobile();
+    else {
+      addBotMessage(`I can tell you about ${portfolioProfile.name}'s professional background. Try asking about:<br>- Skills<br>- Experience<br>- Projects<br>- Contact info`);
+    }
+  }
+
+  // Event listeners
+  sendBtn.addEventListener('click', processMessage);
+  userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') processMessage();
+  });
+
+  // Mobile responsive check
+  function checkMobile() {
+    if (window.innerWidth <= 768) {
+      document.querySelector('.chatbot-pulse').style.display = 'none';
+    }
+  }
+  window.addEventListener('resize', checkMobile);
+  checkMobile();
 });
