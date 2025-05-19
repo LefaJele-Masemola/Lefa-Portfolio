@@ -1,8 +1,8 @@
-//  Profile Data matching portfolio
+// Professional Profile Data
 const portfolioProfile = {
   name: "Lefa Lindo Jele-Masemola",
   title: "Full Stack Developer",
-  location: "Pretoria, South Africia",
+  location: "Pretoria, South Africa",
   sections: {
     about: "#about",
     experience: "#experience",
@@ -18,7 +18,7 @@ const portfolioProfile = {
   education: [
     "Bachelor of Information Technology in Business Systems - IIE Rosebank College",
     "GirlCode ZA Python Bootcamp",
-    "Microsoft AI Skills "
+    "Microsoft AI Skills"
   ],
   experience: [
     "Independent Electoral Commission(IEC)- Registration Officer (2023)",
@@ -35,8 +35,8 @@ const portfolioProfile = {
   contact: {
     email: "lefa030205@gmail.com",
     phone: "+27 71 528 3651",
-    linkedin: "https://www.linkedin.com/in/lefa-jele-masemola-90445421a/",
-    github: "https://github.com/LefaJele-Masemola"
+    linkedin: "linkedin.com/in/lefa-jele-masemola",
+    github: "github.com/LefaJele-Masemola"
   }
 };
 
@@ -44,13 +44,17 @@ const portfolioProfile = {
 const chatbotHTML = `
 <div id="chatbot-container" class="chatbot-hidden">
   <div class="chatbot-header">
-    <h4>Lefa's Chatbot</h4>
+    <h4>Portfolio Assistant</h4>
+    <select id="chatbot-language">
+      <option value="en">English</option>
+      <option value="zu">isiZulu</option>
+    </select>
     <button id="chatbot-close">×</button>
   </div>
   <div class="chatbot-messages" id="chatbot-messages"></div>
   <div class="chatbot-input">
     <button id="chatbot-mic" title="Voice Input">🎤</button>
-    <input type="text" id="chatbot-user-input" placeholder="Ask about my skills or experience...">
+    <input type="text" id="chatbot-user-input" placeholder="Ask about my work...">
     <button id="chatbot-send">Send</button>
   </div>
 </div>
@@ -60,12 +64,12 @@ const chatbotHTML = `
 </button>
 `;
 
-// Chatbot CSS
+// Chatbot CSS with neutral colors and left positioning
 const chatbotCSS = `
 #chatbot-container {
   position: fixed;
   bottom: 90px;
-  left: 20px;
+  left: 30px;
   width: 350px;
   background: #f8f9fa;
   border-radius: 15px;
@@ -76,26 +80,38 @@ const chatbotCSS = `
   opacity: 0;
   transition: all 0.3s ease;
   border: 1px solid #e0e0e0;
-  font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 #chatbot-container.chatbot-visible {
   transform: translateY(0);
   opacity: 1;
 }
+
 .chatbot-header {
   background: #495057;
-  color:#ffffff;
+  color: #ffffff;
   padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #dee2e6;
 }
+
 .chatbot-header h4 {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 500;
 }
+
+#chatbot-language {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  background: #fff;
+  margin: 0 10px;
+}
+
 #chatbot-close {
   background: none;
   border: none;
@@ -105,8 +121,9 @@ const chatbotCSS = `
   line-height: 1;
   opacity: 0.8;
 }
+
 #chatbot-close:hover {
-opacity:1;
+  opacity: 1;
 }
 
 .chatbot-messages {
@@ -115,6 +132,7 @@ opacity:1;
   padding: 15px;
   background: #ffffff;
 }
+
 .chatbot-message {
   margin-bottom: 15px;
   padding: 10px 15px;
@@ -123,19 +141,22 @@ opacity:1;
   line-height: 1.4;
   font-size: 0.95rem;
 }
+
 .chatbot-user-message {
   background: #495057;
   color: white;
   margin-left: auto;
   border-bottom-right-radius: 5px;
 }
+
 .chatbot-bot-message {
   background: #e9ecef;
-  color: #212529
+  color: #212529;
   margin-right: auto;
   border-bottom-left-radius: 5px;
   border: 1px solid #dee2e6;
 }
+
 .chatbot-input {
   display: flex;
   padding: 12px;
@@ -143,6 +164,7 @@ opacity:1;
   border-top: 1px solid #e0e0e0;
   align-items: center;
 }
+
 .chatbot-input input {
   flex: 1;
   padding: 10px 15px;
@@ -152,14 +174,17 @@ opacity:1;
   margin-right: 10px;
   color: #495057;
   font-size: 0.9rem;
-  outline:none;
+  outline: none;
 }
-  .chatbot-input input:focus {
+
+.chatbot-input input:focus {
   border-color: #adb5bd;
 }
+
 .chatbot-input input::placeholder {
-  color: #adb5db;
+  color: #adb5bd;
 }
+
 .chatbot-input button {
   padding: 10px 15px;
   background: #495057;
@@ -170,23 +195,31 @@ opacity:1;
   font-weight: 500;
   transition: all 0.2s ease;
 }
+
 .chatbot-input button:hover {
-  background:#343a40;
+  background: #343a40;
 }
+
 #chatbot-mic {
   background: none;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
   margin-right: 10px;
-  color: #49507;
+  color: #495057;
   padding: 5px;
-    transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
+
+#chatbot-mic:hover {
+  color: #212529;
+  transform: scale(1.1);
+}
+
 .chatbot-toggle-btn {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 30px;
   width: 60px;
   height: 60px;
   background: #495057;
@@ -198,14 +231,16 @@ opacity:1;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   z-index: 999;
   transition: all 0.3s ease;
 }
+
 .chatbot-toggle-btn:hover {
   transform: scale(1.1);
-  background: #343a49
+  background: #343a40;
 }
+
 .chatbot-pulse {
   position: absolute;
   width: 100%;
@@ -215,25 +250,29 @@ opacity:1;
   animation: chatbot-pulse 2s infinite;
   opacity: 0.3;
 }
+
 @keyframes chatbot-pulse {
   0% { transform: scale(0.95); opacity: 0.3; }
   70% { transform: scale(1.1); opacity: 0; }
   100% { transform: scale(0.95); opacity: 0; }
 }
+
 .chatbot-link {
   color: #495057;
   text-decoration: underline;
   font-weight: 500;
 }
+
 @media (max-width: 768px) {
   #chatbot-container {
     width: 90%;
-    right: 5%;
+    left: 5%;
     bottom: 80px;
   }
+  
   .chatbot-toggle-btn {
     bottom: 20px;
-    right: 20px;
+    left: 20px;
     width: 50px;
     height: 50px;
   }
@@ -241,67 +280,250 @@ opacity:1;
 `;
 
 // Initialize Chatbot
-document.addEventListener('DOMContentLoaded', function () {
-  // Add HTML and CSS to the page
-  document.body.insertAdjacentHTML('beforeend', chatbotHTML);
-  const style = document.createElement('style');
-  style.textContent = chatbotCSS;
-  document.head.appendChild(style);
-
-  // Chatbot functionality
-  const chatbotContainer = document.getElementById('chatbot-container');
-  const chatbotToggle = document.getElementById('chatbot-toggle');
-  const chatbotClose = document.getElementById('chatbot-close');
-  const chatMessages = document.getElementById('chatbot-messages');
-  const userInput = document.getElementById('chatbot-user-input');
-  const sendBtn = document.getElementById('chatbot-send');
-  const micBtn = document.getElementById('chatbot-mic'); 
-  // Show welcome message after 3 seconds
-
-  //Text-to-Speech with female voice
-   // Text-to-Speech Functionality with female voice
+document.addEventListener('DOMContentLoaded', function() {
+    // Add HTML and CSS to the page
+    document.body.insertAdjacentHTML('beforeend', chatbotHTML);
+    const style = document.createElement('style');
+    style.textContent = chatbotCSS;
+    document.head.appendChild(style);
+    
+    // Chatbot elements
+    const chatbotContainer = document.getElementById('chatbot-container');
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatMessages = document.getElementById('chatbot-messages');
+    const userInput = document.getElementById('chatbot-user-input');
+    const sendBtn = document.getElementById('chatbot-send');
+    const micBtn = document.getElementById('chatbot-mic');
+    const languageSelect = document.getElementById('chatbot-language');
+    
+    // Language management
+    let currentLanguage = 'en';
+    
+    // Text-to-Speech with female voice
     function speak(text, lang = 'en') {
         if ('speechSynthesis' in window) {
-            // Clean text for speech (remove HTML)
-            const cleanText = text.replace(/<[^>]*>?/gm, '');
-            const utterance = new SpeechSynthesisUtterance(cleanText);
-            // Configure voice settings
+            window.speechSynthesis.cancel();
+            
+            const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = lang === 'zu' ? 'zu-ZA' : 'en-US';
-            utterance.rate = 0.9; // Slightly slower speech
-            utterance.pitch = 1.2; // Slightly higher pitch for female voice
+            utterance.rate = 0.9;
+            utterance.pitch = 1.1;
             
-            // Try to find a female voice
             const voices = window.speechSynthesis.getVoices();
-            const femaleVoice = voices.find(voice => 
-                (voice.lang.includes(lang === 'zu' ? 'zu' : 'en') && 
-                 voice.name.toLowerCase().includes('female'))
-            );
-            
-            if (femaleVoice) {
-                utterance.voice = femaleVoice;
+            if (voices.length > 0) {
+                setFemaleVoice(utterance, lang);
+            } else {
+                window.speechSynthesis.onvoiceschanged = () => {
+                    setFemaleVoice(utterance, lang);
+                };
             }
             
             window.speechSynthesis.speak(utterance);
         }
     }
     
-     // Show welcome message immediately in both languages
-    function showWelcomeMessage() {
-        const welcomeMessage = `
-            Hello! I'm here to tell you about ${portfolioProfile.name}'s professional background. 
-            You can ask me about skills, experience, or projects!
-            <br><br>
-            Sawubona! Ngilapha ukukutshela ngomsebenzi ka-${portfolioProfile.name}. 
-            Ungabuza ngamakhono, isipiliyoni, noma imisebenzi!
-        `;
-        addBotMessage(welcomeMessage);
-        speak("Hello! I'm your portfolio assistant. How can I help?"); // English greeting
+    function setFemaleVoice(utterance, lang) {
+        const voices = window.speechSynthesis.getVoices();
+        const femaleVoice = voices.find(voice => {
+            const isCorrectLanguage = lang === 'zu' 
+                ? voice.lang.includes('zu') || voice.lang.includes('zul')
+                : voice.lang.includes('en');
+            return isCorrectLanguage && 
+                  (voice.name.toLowerCase().includes('female') || 
+                   voice.name.toLowerCase().includes('woman'));
+        });
+        
+        if (femaleVoice) {
+            utterance.voice = femaleVoice;
+        } else {
+            const langVoice = voices.find(voice => 
+                lang === 'zu' 
+                    ? voice.lang.includes('zu') || voice.lang.includes('zul')
+                    : voice.lang.includes('en')
+            );
+            if (langVoice) utterance.voice = langVoice;
+        }
     }
     
-    // Show chatbot immediately with welcome message
+    // Language-specific welcome messages
+    function showWelcomeMessage() {
+        chatMessages.innerHTML = '';
+        if (currentLanguage === 'zu') {
+            const zuWelcome = `Sawubona! Ngingumsizi we-portfolio ka-${portfolioProfile.name}. Ungabuza ngamakhono, isipiliyoni, noma imisebenzi yakhe.`;
+            addBotMessage(zuWelcome);
+            speak("Sawubona! Ngingakusiza ngani?", 'zu');
+        } else {
+            const enWelcome = `Hello! I'm ${portfolioProfile.name}'s portfolio assistant. Ask me about skills, experience, or projects!`;
+            addBotMessage(enWelcome);
+            speak("Hello! How can I help you today?", 'en');
+        }
+    }
+    
+    // Language switching
+    languageSelect.addEventListener('change', (e) => {
+        currentLanguage = e.target.value;
+        showWelcomeMessage();
+    });
+    
+    // Message handling
+    function addUserMessage(message) {
+        const messageElement = document.createElement('div');
+        messageElement.className = 'chatbot-message chatbot-user-message';
+        messageElement.textContent = message;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    function addBotMessage(message) {
+        const messageElement = document.createElement('div');
+        messageElement.className = 'chatbot-message chatbot-bot-message';
+        messageElement.innerHTML = message;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    function processMessage() {
+        const message = userInput.value.trim();
+        if (!message) return;
+        
+        addUserMessage(message);
+        userInput.value = '';
+        
+        setTimeout(() => {
+            generateResponse(message.toLowerCase());
+        }, 500);
+    }
+    
+    // Response generation
+    function generateResponse(message) {
+        if (currentLanguage === 'zu') {
+            generateZuluResponse(message);
+        } else {
+            generateEnglishResponse(message);
+        }
+    }
+    
+    function generateEnglishResponse(message) {
+        let response = '';
+        let speakText = '';
+        
+        if (message.includes('about') || message.includes('who are you')) {
+            response = `I'm ${portfolioProfile.name}, a ${portfolioProfile.title} from ${portfolioProfile.location}. <a href="${portfolioProfile.sections.about}" class="chatbot-link">Visit my about section</a>`;
+            speakText = `I'm ${portfolioProfile.name}, a ${portfolioProfile.title}`;
+            scrollToSection(portfolioProfile.sections.about);
+        }
+        else if (message.includes('experience') || message.includes('work')) {
+            response = `<strong>My Experience:</strong><br>${portfolioProfile.experience.join('<br>')}<br><br><a href="${portfolioProfile.sections.experience}" class="chatbot-link">View experience section</a>`;
+            speakText = "Here's my professional experience";
+            scrollToSection(portfolioProfile.sections.experience);
+        }
+        else if (message.includes('project')) {
+            response = `<strong>My Projects:</strong><br>${portfolioProfile.projects.join('<br>')}<br><br><a href="${portfolioProfile.sections.projects}" class="chatbot-link">View projects section</a>`;
+            speakText = "These are my projects";
+            scrollToSection(portfolioProfile.sections.projects);
+        }
+        else if (message.includes('contact') || message.includes('reach')) {
+            response = `<strong>Contact Me:</strong><br>Email: ${portfolioProfile.contact.email}<br>Phone: ${portfolioProfile.contact.phone}<br><a href="https://${portfolioProfile.contact.linkedin}" class="chatbot-link" target="_blank">LinkedIn</a><br><a href="https://${portfolioProfile.contact.github}" class="chatbot-link" target="_blank">GitHub</a><br><br><a href="${portfolioProfile.sections.contact}" class="chatbot-link">Go to contact section</a>`;
+            speakText = "Here's how you can contact me";
+            scrollToSection(portfolioProfile.sections.contact);
+        }
+        else if (message.includes('skill')) {
+            response = `<strong>My Skills:</strong><br><strong>Frontend:</strong> ${portfolioProfile.skills.frontend.join(', ')}<br><strong>Backend:</strong> ${portfolioProfile.skills.backend.join(', ')}<br><strong>DevOps:</strong> ${portfolioProfile.skills.devops.join(', ')}<br><strong>Design:</strong> ${portfolioProfile.skills.design.join(', ')}`;
+            speakText = "Here are my technical skills";
+        }
+        else {
+            response = `I can tell you about:<br>- My skills<br>- Work experience<br>- Projects<br>- Contact info<br><br>Try asking something specific!`;
+            speakText = "How can I help you?";
+        }
+        
+        addBotMessage(response);
+        speak(speakText, 'en');
+    }
+    
+    function generateZuluResponse(message) {
+        let response = '';
+        let speakText = '';
+        
+        if (message.includes('about') || message.includes('ngubani')) {
+            response = `Ngingu-${portfolioProfile.name}, ${portfolioProfile.title} wase-${portfolioProfile.location}. <a href="${portfolioProfile.sections.about}" class="chatbot-link">Vakashela esigabeni sami</a>`;
+            speakText = `Ngingu ${portfolioProfile.name}, ${portfolioProfile.title}`;
+            scrollToSection(portfolioProfile.sections.about);
+        }
+        else if (message.includes('experience') || message.includes('isipiliyoni')) {
+            response = `<strong>Isipiliyoni Sami:</strong><br>${portfolioProfile.experience.join('<br>')}<br><br><a href="${portfolioProfile.sections.experience}" class="chatbot-link">Bona isigaba sesipiliyoni</a>`;
+            speakText = "Nansi isipiliyoni sami somsebenzi";
+            scrollToSection(portfolioProfile.sections.experience);
+        }
+        else if (message.includes('project') || message.includes('msebenzi')) {
+            response = `<strong>Imisebenzi Yami:</strong><br>${portfolioProfile.projects.join('<br>')}<br><br><a href="${portfolioProfile.sections.projects}" class="chatbot-link">Bona isigaba semisebenzi</a>`;
+            speakText = "Ngemisebenzi engiyenzile";
+            scrollToSection(portfolioProfile.sections.projects);
+        }
+        else if (message.includes('contact') || message.includes('xhumana')) {
+            response = `<strong>Xhumana Nami:</strong><br>I-imeyili: ${portfolioProfile.contact.email}<br>Ucingo: ${portfolioProfile.contact.phone}<br><a href="https://${portfolioProfile.contact.linkedin}" class="chatbot-link" target="_blank">LinkedIn</a><br><a href="https://${portfolioProfile.contact.github}" class="chatbot-link" target="_blank">GitHub</a><br><br><a href="${portfolioProfile.sections.contact}" class="chatbot-link">Iya esigabeni sokuxhumana</a>`;
+            speakText = "Ngemisebenzi engiyenzile";
+            scrollToSection(portfolioProfile.sections.contact);
+        }
+        else if (message.includes('skill') || message.includes('amakhono')) {
+            response = `<strong>Amakhono Ami:</strong><br><strong>Frontend:</strong> ${portfolioProfile.skills.frontend.join(', ')}<br><strong>Backend:</strong> ${portfolioProfile.skills.backend.join(', ')}<br><strong>DevOps:</strong> ${portfolioProfile.skills.devops.join(', ')}<br><strong>Design:</strong> ${portfolioProfile.skills.design.join(', ')}`;
+            speakText = "Nalamakhono ami obuchwepheshe";
+        }
+        else {
+            response = `Ngingakutshela mayelana:<br>- Amakhono ami<br>- Isipiliyoni somsebenzi<br>- Imisebenzi yami<br>- Imininingwane yokuxhumana<br><br>Zama ukubuza okuthile okucacile!`;
+            speakText = "Ngingakusiza ngani?";
+        }
+        
+        addBotMessage(response);
+        speak(speakText, 'zu');
+    }
+    
+    function scrollToSection(sectionId) {
+        setTimeout(() => {
+            const section = document.querySelector(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+                section.style.transition = 'background-color 0.5s ease';
+                section.style.backgroundColor = '#e3f2fd';
+                setTimeout(() => {
+                    section.style.backgroundColor = '';
+                }, 2000);
+            }
+        }, 800);
+    }
+    
+    // Voice recognition
+    function initVoiceRecognition() {
+        if (!('webkitSpeechRecognition' in window)) {
+            micBtn.style.display = 'none';
+            return;
+        }
+        
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = currentLanguage === 'zu' ? 'zu-ZA' : 'en-US';
+        recognition.interimResults = false;
+        
+        micBtn.addEventListener('click', () => {
+            recognition.start();
+            addBotMessage(currentLanguage === 'zu' ? "Ngiyalalela..." : "I'm listening...");
+        });
+        
+        recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript;
+            userInput.value = transcript;
+            processMessage();
+        };
+        
+        recognition.onerror = (event) => {
+            addBotMessage(currentLanguage === 'zu' ? "Angizange ngikuzwe. Zama futhi." : "Sorry, I didn't catch that. Please try again.");
+        };
+    }
+    
+    // Initialize chatbot
     chatbotContainer.classList.add('chatbot-visible');
     document.querySelector('.chatbot-pulse').style.display = 'none';
     showWelcomeMessage();
+    initVoiceRecognition();
     
     // Toggle chatbot visibility
     chatbotToggle.addEventListener('click', () => {
@@ -314,141 +536,12 @@ document.addEventListener('DOMContentLoaded', function () {
         chatbotContainer.classList.remove('chatbot-visible');
         document.querySelector('.chatbot-pulse').style.display = 'block';
     });
-  
-
-  // Message handling
-  function addUserMessage(message) {
-    const messageElement = document.createElement('div');
-    messageElement.className = 'chatbot-message chatbot-user-message';
-    messageElement.textContent = message;
-    chatMessages.appendChild(messageElement);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-  function addBotMessage(message) {
-    const messageElement = document.createElement('div');
-    messageElement.className = 'chatbot-message chatbot-bot-message';
-    messageElement.innerHTML = message;
-    chatMessages.appendChild(messageElement);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-  function processMessage() {
-    const message = userInput.value.trim();
-    if (!message) return;
-
-    addUserMessage(message);
-    userInput.value = '';
-
-    setTimeout(() => {
-      generateResponse(message.toLowerCase());
-    }, 500);
-  }
-
-// Voice recognition
-    function initVoiceRecognition() {
-        if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-            micBtn.style.display = 'none';
-            return;
-        }
-        
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        const recognition = new SpeechRecognition();
-        recognition.lang = currentLanguage === 'zu' ? 'zu-ZA' : 'en-US';
-        recognition.interimResults = false;
-        
-        micBtn.addEventListener('click', () => {
-            recognition.start();
-            addBotMessage("I'm listening...");
-        });
-        
-        recognition.onresult = (event) => {
-            const transcript = event.results[0][0].transcript;
-            userInput.value = transcript;
-            processMessage();
-        };
-        
-        recognition.onerror = (event) => {
-            addBotMessage("Sorry, I didn't catch that. Please try again.");
-        };
-    }
-    
-    // Language switching
-    let currentLanguage = 'en';
-    const languageSelect = document.createElement('select');
-    languageSelect.innerHTML = `
-        <option value="en">English</option>
-        <option value="zu">isiZulu</option>
-    `;
-    languageSelect.style.marginLeft = '10px';
-    languageSelect.addEventListener('change', (e) => {
-        currentLanguage = e.target.value;
-    });
-    
-    // Add language selector to header
-    document.querySelector('.chatbot-header').appendChild(languageSelect);
-    
-    // Response generation with isiZulu support
-    function generateResponse(message) {
-        let response = '';
-        let speakText = '';
-        
-        if (message.includes('about') || message.includes('who are you') || message.includes('ngubani')) {
-            if (currentLanguage === 'zu') {
-                response = `Ungu-${portfolioProfile.name}, ${portfolioProfile.title}. <a href="${portfolioProfile.sections.about}" class="chatbot-link">Vakashela esigabeni sakhe</a>`;
-                speakText = `Ungu ${portfolioProfile.name}, ${portfolioProfile.title} wase ${portfolioProfile.location}`;
-            } else {
-                response = `I'm ${portfolioProfile.name}, a ${portfolioProfile.title}. <a href="${portfolioProfile.sections.about}" class="chatbot-link">Visit About Section</a>`;
-                speakText = `I'm ${portfolioProfile.name}, a ${portfolioProfile.title} from ${portfolioProfile.location}`;
-            }
-        }
-        else if (message.includes('skill') || message.includes('tech') || message.includes('amakhono')) {
-            if (currentLanguage === 'zu') {
-                response = `<strong>Amakhono:</strong><br>Frontend: ${portfolioProfile.skills.frontend.join(', ')}<br>Backend: ${portfolioProfile.skills.backend.join(', ')}`;
-                speakText = "Amakhono ami afaka i-frontend, i-backend, kanye ne-devops";
-            } else {
-                response = `<strong>Skills:</strong><br>Frontend: ${portfolioProfile.skills.frontend.join(', ')}<br>Backend: ${portfolioProfile.skills.backend.join(', ')}`;
-                speakText = "My skills include frontend, backend, and devops technologies";
-            }
-        }
-        else if (message.includes('experience') || message.includes('work') || message.includes('isipiliyoni')) {
-            response = `<strong>${currentLanguage === 'zu' ? 'Isipiliyoni' : 'Experience'}:</strong><br>${portfolioProfile.experience.join('<br>')}`;
-            speakText = currentLanguage === 'zu' ? 
-                `Isipiliyoni sika ${portfolioProfile.name}` : 
-                `${portfolioProfile.name}'s work experience`;
-        }
-        else if (message.includes('project') || message.includes('msebenzi') || message.includes('imisebenzi')) {
-            response = `<strong>${currentLanguage === 'zu' ? 'Imisebenzi' : 'Projects'}:</strong><br>${portfolioProfile.projects.join('<br>')}`;
-            speakText = currentLanguage === 'zu' ? "Imisebenzi engiyenzile" : "Projects I have worked on";
-        }
-        else if (message.includes('contact') || message.includes('reach') || message.includes('xhumana')) {
-            response = `<strong>${currentLanguage === 'zu' ? 'Imininingwane' : 'Contact'}:</strong><br>Email: ${portfolioProfile.contact.email}<br>LinkedIn: <a href="https://${portfolioProfile.contact.linkedin}" class="chatbot-link" target="_blank">${portfolioProfile.contact.linkedin}</a>`;
-            speakText = currentLanguage === 'zu' ? 
-                `Ungangithola ku-email ${portfolioProfile.contact.email}` : 
-                `You can reach me at ${portfolioProfile.contact.email}`;
-        }
-        else {
-            if (currentLanguage === 'zu') {
-                response = `Ngingakutshela ngo ${portfolioProfile.name}. Zama ukubuza:<br>- Amakhono<br>- Isipiliyoni<br>- Imisebenzi<br>- Imininingwane`;
-                speakText = "Ngingakusiza ngani?";
-            } else {
-                response = `I can tell you about ${portfolioProfile.name}'s professional background. Try asking about:<br>- Skills<br>- Experience<br>- Projects<br>- Contact info`;
-                speakText = "How can I help you today?";
-            }
-        }
-        
-        addBotMessage(response);
-        speak(speakText, currentLanguage);
-    }
     
     // Event listeners
     sendBtn.addEventListener('click', processMessage);
     userInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') processMessage();
     });
-    
-    // Initialize voice recognition
-    initVoiceRecognition();
     
     // Mobile responsive check
     function checkMobile() {
@@ -458,11 +551,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     window.addEventListener('resize', checkMobile);
     checkMobile();
-    
-    // Load voices when available
-    if ('speechSynthesis' in window) {
-        speechSynthesis.onvoiceschanged = function() {
-            console.log("Voices loaded");
-        };
-    }
 });
