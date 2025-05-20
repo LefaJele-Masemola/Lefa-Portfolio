@@ -235,7 +235,7 @@ body {
 /* Enhanced Profile Picture Styling */
 .profile-pic img {
     width: 300px; /* Increased size for better visibility */
-    height: 300px; /* Increased size for better visibility */
+    height: 350px; /* Increased size for better visibility */
     object-fit: cover;
     border-radius: 50%; /* Makes image circular */
     border: 5px solid #333; /* Dark border */
